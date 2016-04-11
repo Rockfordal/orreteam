@@ -4,7 +4,7 @@ module.exports = {
         path: './',
         filename: 'index.js'
     },
-    devSErver: {
+    devServer: {
         inline: true,
         port: 3333
     },
@@ -21,3 +21,4 @@ module.exports = {
         ]
     }
 }
+
