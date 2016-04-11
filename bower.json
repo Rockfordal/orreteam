@@ -1,0 +1,21 @@
+{
+  "name": "orreateam",
+  "description": "npm install -g babel webpack webpack-dev-server",
+  "main": "main.js",
+  "authors": [
+    "Anders Lundström <anders@urkraft.se>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#^0.97.6"
+  }
+}

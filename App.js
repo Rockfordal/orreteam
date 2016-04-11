@@ -7,8 +7,8 @@ class App extends React.Component {
             <table className="striped">
               <thead>
                 <tr>
-                  <th data-field="name">mja</th>
-                  <th data-field="year">mja</th>
+                  <th data-field="name">Bilmärke</th>
+                  <th data-field="year">År</th>
                 </tr>
               </thead>
               <tbody>
