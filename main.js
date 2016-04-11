@@ -3,25 +3,25 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as $ from 'jquery';
 
-var carurl = "http://localhost:2480/documentbyclass/bilar/Cars/0";
-var authdata = { user: "urkraft", password: "programmering" }
-
-function make_base_auth(user, password) {
+const make_base_auth = (user, password) => {
     var tok = user + ':' + password;
     var hash = btoa(tok);
     return "Basic " + hash;
-}
+};
+
+const carurl = 'http://localhost:2480/documentbyclass/bilar/Cars/0';
+const authheaders = { "Authorization": make_base_auth('urkraft', 'programmering') };
 
 $.ajax({url: carurl,
-        headers: { "Authorization": make_base_auth("urkraft", "programmering") },
+        headers: authheaders,
         type: 'GET',
         crossDomain: true,
-        dataType: 'jsonp',
         error: function() {
-            alert('Naaaj!');
+            consoole.log('Naaaj!  Hittade ingen bil. Är OrientDB verkligen igång?');
         },
-        success: function(data) {
-            console.log("Jag har hittat en " + data.name + " från år " + data.year + "!");
+        success: function(bil) {
+            console.log("Jag har hittat en " + bil.name + " från år " + bil.year + "!");
         }});
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
+
