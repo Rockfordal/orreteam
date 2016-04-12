@@ -17,11 +17,10 @@ $.ajax({url: carurl,
         type: 'GET',
         crossDomain: true,
         error: function() {
-            consoole.log('Naaaj!  Hittade ingen bil. Är OrientDB verkligen igång?');
+            console.log('Naaaj!  Hittade ingen bil. Är OrientDB verkligen igång?');
         },
         success: function(bil) {
             console.log("Jag har hittat en " + bil.name + " från år " + bil.year + "!");
         }});
 
 ReactDOM.render(<App />, document.getElementById('app'));
-
