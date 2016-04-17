@@ -1,5 +1,7 @@
 import React from 'react';
 import Carindex from './car.jsx';
+import MyNavbar from './components/navbar.jsx'
+
 
 class Knapp extends React.Component {
     render() {
@@ -11,6 +13,7 @@ class App extends React.Component {
     render() {
         return (
           <div>
+              <MyNavbar />
               <h1>Webpack + React + Materialize</h1>
               <br/>
               <Carindex />
@@ -18,5 +21,7 @@ class App extends React.Component {
               <Knapp />
           </div>
 )}}
+
+
 
 export default App
