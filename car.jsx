@@ -29,9 +29,13 @@ class Carindex extends React.Component {
     }
     componentDidMount() {
         let db = new Db;
-        const carurl = 'http://localhost:2480/documentbyclass/bilar/Cars/0';
-        let success = (car) => {
-            this.setState({cars: [car]});
+        const baseurl = 'http://localhost:2480';
+        //const carurl = baseurl + '/documentbyclass/bilar/Cars/0';
+        const iQuery = 'SELECT * FROM Cars';
+        const carurl = baseurl + '/query/bilar/sql/' + iQuery;
+        let success = (cars) => {
+            console.log(cars.result);
+            this.setState({cars: cars.result});
             }
         db.get(carurl, success);
     }
