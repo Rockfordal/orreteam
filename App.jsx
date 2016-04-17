@@ -1,16 +1,22 @@
 import React from 'react';
 import Carindex from './car.jsx';
 
+class Knapp extends React.Component {
+    render() {
+        return (
+              <a className="waves-effect waves-light btn">Click me</a>
+            )}}
+
 class App extends React.Component {
     render() {
         return (
           <div>
               <h1>Webpack + React + Materialize</h1>
               <br/>
-              <a className="waves-effect waves-light btn">Click me</a>
+              <Carindex />
+              <br/>
+              <Knapp />
           </div>
 )}}
-
-/* <Carindex /> */
 
 export default App

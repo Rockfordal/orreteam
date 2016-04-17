@@ -1,3 +1,4 @@
+import React from 'react';
 import Db from './db';
 
 class Carindex extends React.Component {
