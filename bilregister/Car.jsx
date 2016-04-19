@@ -1,15 +1,22 @@
 import React from 'react';
-import Db from './db';
+import Db from '../common/Db';
+import {Button, Icon} from 'react-materialize';
 
-class Carindex extends React.Component {
+class Car_page extends React.Component {
+    render() {
+        return (
+          <div>
+            <Car_index />
+            <br />
+            <Button node='a' waves='light'><Icon right>add</Icon>Ny Bil</Button>
+          </div>
+)}}
+
+class Car_index extends React.Component {
     constructor() {
         super();
         this.state = { cars: [] };
-        /* this.update = this.update.bind(this); */
     }
-    /* update(){
-       this.setState(cars: this.state.cars)
-       } */
     render() {
         return (
             <table className="striped">
@@ -17,11 +24,12 @@ class Carindex extends React.Component {
                 <tr>
                   <th data-field="name">Bilmärke</th>
                   <th data-field="year">År</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
-                  {this.state.cars.map((car) => {
-                       return <Carrow key={car.id} car={car} />;
+                  { this.state.cars.map((car) => {
+                     return <Car_row key={car["@rid"]} car={car} />
                    })}
               </tbody>
             </table>
@@ -29,30 +37,22 @@ class Carindex extends React.Component {
     }
     componentDidMount() {
         let db = new Db;
-        const baseurl = 'http://localhost:2480';
-        //const carurl = baseurl + '/documentbyclass/bilar/Cars/0';
-        const iQuery = 'SELECT * FROM Cars';
-        const carurl = baseurl + '/query/bilar/sql/' + iQuery;
-        let success = (cars) => {
-            console.log(cars.result);
+        db.query('bilar', 'SELECT * FROM Cars', (cars) => {
             this.setState({cars: cars.result});
             }
-        db.get(carurl, success);
+      );
     }
 }
 
-const Carrow = (props) =>
+const Car_row = (props) =>
     <tr>
       <td>{props.car.name}</td>
       <td>{props.car.year}</td>
+      <td><Icon>delete</Icon></td>
     </tr>
 
 // Cars.propTypes = {
 //     cars: React.PropTypes.string
 // }
 
-// Cars.defaultProps = {
-//     cars: "inga bilar än"
-// }
-
-export default Carindex
+export default Car_page

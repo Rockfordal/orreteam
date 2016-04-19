@@ -1,27 +1,16 @@
 import React from 'react';
-import Carindex from './car.jsx';
-import MyNavbar from './components/navbar.jsx'
-
-
-class Knapp extends React.Component {
-    render() {
-        return (
-              <a className="waves-effect waves-light btn">Click me</a>
-            )}}
+import Car_page from './bilregister/Car.jsx';
+import MyNavbar from './layout/Navbar.jsx'
 
 class App extends React.Component {
     render() {
         return (
           <div>
               <MyNavbar />
-              <h1>Webpack + React + Materialize</h1>
               <br/>
-              <Carindex />
+              <Car_page/>
               <br/>
-              <Knapp />
           </div>
 )}}
-
-
 
 export default App

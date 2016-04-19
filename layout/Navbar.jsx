@@ -4,15 +4,12 @@ import {Navbar, NavItem} from 'react-materialize';
 class MyNavbar extends React.Component {
     render() {
         return (
-        <div>
-        <Navbar brand='logo' right>
-          <NavItem href='get-started.html'>Getting started</NavItem>
-          <NavItem href='components.html'>Components</NavItem>
+        <Navbar brand='React Materialize OrientDB' right>
+          <NavItem className="active" href='#/cars'>Bilar</NavItem>
+          <NavItem href='#/garages'>Garage</NavItem>
         </Navbar>
-        </div>
         )
     }
-
 }
 
 export default MyNavbar
