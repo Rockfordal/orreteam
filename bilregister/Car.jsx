@@ -2,7 +2,7 @@ import React from 'react';
 import Db from '../common/Db';
 import {Button, Icon} from 'react-materialize';
 
-class Car_page extends React.Component {
+class Cars extends React.Component {
     render() {
         return (
           <div>
@@ -55,4 +55,4 @@ const Car_row = (props) =>
 //     cars: React.PropTypes.string
 // }
 
-export default Car_page
+export default Cars
