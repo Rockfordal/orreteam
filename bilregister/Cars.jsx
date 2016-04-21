@@ -7,18 +7,17 @@ class Cars extends React.Component {
     render() {
         return (
           <div>
-            <Car_index />
+            <CarIndex />
             <br />
             <Button node='a' waves='light'><Icon right>add</Icon>Ny Bil</Button>
             <br />
-            {this.props.params.id}  
           </div>
 )}}
 
-class Car_index extends React.Component {
+class CarIndex extends React.Component {
     constructor() {
         super();
-        this.state = { cars: [] };
+        this.state = { cars: [{}] };
     }
     render() {
         return (
@@ -32,7 +31,7 @@ class Car_index extends React.Component {
               </thead>
               <tbody>
                   { this.state.cars.map((car) => {
-                     return <Car_row key={car.id} car={car} />
+                     return <CarRow key={car.id} car={car} />
                    })}
               </tbody>
             </table>
@@ -47,25 +46,27 @@ class Car_index extends React.Component {
     }
 }
 
-class Car_row extends React.Component {
-  render() {
-    let rid = this.props.car.id;
-    // let id = rid;
-    let id = rid.replace('#', '')
-                .replace(':', '');
-    // console.log(id);
-    // let i = rid.indexOf(':') + 1;
-    // let l = rid.length + 1;
-    // let id = rid.substring(i, l);
+const CarRow = (props) => {
     return (
       <tr>
-        <td>{this.props.car.name}</td>
-        <td>{this.props.car.year}</td>
-        <td><Link to={`/cars/${id}`}>{id}<Icon>delete</Icon></Link></td>
+        <td>{props.car.name}</td>
+        <td>{props.car.year}</td>
+        <td><Link to={`/cars/${rid2id(props.car.id)}`}><Icon>delete</Icon></Link></td>
       </tr>
-  )}}
+    )
+}
 
-// const rid2id (rid) =>
+const rid2id = (rid) => {
+    if (rid) {
+        let i = rid.indexOf(':') + 1;
+        let l = rid.length + 1;
+        let id = rid.substring(i, l);
+        return id;
+    }
+    else return "";
+}
+
+/* let id = rid.replace('#', '00').replace(':', '00'); */
 
 // Cars.propTypes = {
 //     cars: React.PropTypes.string

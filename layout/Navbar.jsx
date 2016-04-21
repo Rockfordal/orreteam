@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar, NavItem} from 'react-materialize';
-import {Link} from 'react-router';
 import classNames from 'classnames';
+/* import {Link} from 'react-router'; */
 
 class MyNavbar extends React.Component {
   render() {
