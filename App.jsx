@@ -1,5 +1,6 @@
 import React from 'react';
-import Cars from './bilregister/Car.jsx';
+import Car from './bilregister/Car.jsx';
+import Cars from './bilregister/Cars.jsx';
 import MyNavbar from './layout/Navbar.jsx';
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 
@@ -13,6 +14,7 @@ class App extends React.Component {
         <Route path="/" component={MyNavbar}>
           <IndexRoute component={Home} />
           <Route path="/cars" component={Cars} />
+            <Route path="/cars/:id" component={Car}/>
           <Route path="/garage" component={Garage} />
         </Route>
       </Router>
