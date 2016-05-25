@@ -5,8 +5,8 @@ import MyNavbar from './layout/Navbar.jsx';
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
-const Hem    = () => <h1>Home</h1>;
-const Garage = () => <h1>Garage</h1>;
+const Hem = () => "<h1>Home</h1>"
+const Garage = () => "<h1>Garage</h1>"
 
 class App extends React.Component {
   render() {
