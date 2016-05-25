@@ -1,6 +1,6 @@
 import React from 'react';
 import Db from '../common/Db';
-import {Button, Icon} from 'react-materialize';
+// import {Button, Icon} from 'react-materialize';
 import {Link} from 'react-router';
 
 class Cars extends React.Component {
@@ -9,10 +9,11 @@ class Cars extends React.Component {
           <div>
             <CarIndex />
             <br />
-            <Button node='a' waves='light'><Icon right>add</Icon>Ny Bil</Button>
             <br />
           </div>
 )}}
+
+            // <Button node='a' waves='light'><Icon right>add</Icon>Ny Bil</Button>
 
 class CarIndex extends React.Component {
     constructor() {
